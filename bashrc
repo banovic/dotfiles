@@ -18,6 +18,8 @@ export DOTNET_ROOT="$HOME/.dotnet"
 export USER_OPT_DIR="$HOME/opt"
 # npm
 export NPM_CONFIG_PREFIX="$HOME/.npm-global"
+# flutter
+export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
 # Path
 PATH="$HOME/bin:$HOME/.local/bin:$HOME/.dotnet:$HOME/.dotnet/tools:$HOME/.npm-global/bin:$USER_OPT_DIR/flutter/bin:$PATH"
@@ -25,6 +27,7 @@ PATH="$HOME/bin:$HOME/.local/bin:$HOME/.dotnet:$HOME/.dotnet/tools:$HOME/.npm-gl
 # Rust/Cargo, deno, flutter/dart
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+[ -d "$USER_OPT_DIR/flutter/bin" ] && PATH="$USER_OPT_DIR/flutter/bin:$PATH"
 
 # Secrets (API keys, etc.), local not in repo
 [ -f "$HOME/.secrets" ] && . "$HOME/.secrets"
