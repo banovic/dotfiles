@@ -9,3 +9,4 @@ touch ~/.secrets
 ln -sf "${DOTFILES_DIR}/profile" ~/.profile
 ln -sf "${DOTFILES_DIR}/bashrc" ~/.bashrc
 ln -sf "${DOTFILES_DIR}/Xmodmap" ~/.Xmodmap
+ln -sf "${DOTFILES_DIR}/emacs" ~/.emacs
