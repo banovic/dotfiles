@@ -22,7 +22,7 @@ export NPM_CONFIG_PREFIX="$HOME/.npm-global"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
 # Path
-PATH="$HOME/bin:$HOME/.local/bin:$HOME/.dotnet:$HOME/.dotnet/tools:$HOME/.npm-global/bin:$USER_OPT_DIR/flutter/bin:$PATH"
+PATH="$HOME/bin:$HOME/.local/bin:$HOME/.dotnet:$HOME/.dotnet/tools:$HOME/.npm-global/bin:$USER_OPT_DIR/flutter/bin:$PATH:$HOME/.local/share/pnpm"
 
 # Rust/Cargo, deno, flutter/dart
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
@@ -57,3 +57,11 @@ fd() { find . -type d -iname "*$1*"; }
 
 
 
+
+# pnpm
+export PNPM_HOME="/home/bane/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
