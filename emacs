@@ -1,3 +1,5 @@
+;;; ...  -*- lexical-binding: t -*-
+
 ;; package --- Bane, emacs, config, n+1 th iteration
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -198,14 +200,6 @@
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   :hook (dart-mode . lsp))
 
-;;
-;; Python?
-;;
-(use-package elpy
-  :ensure
-  :init
-  (elpy-enable))
-
 (use-package emojify
   :ensure
   :hook (after-init . global-emojify-mode))
@@ -215,7 +209,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(clojure-mode emojify lsp-dart lsp-ui move-text php-mode rustic
+		  web-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
